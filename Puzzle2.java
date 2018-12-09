@@ -265,7 +265,7 @@ public class Puzzle2
 		var list = new ArrayList<String>();
 		
 		fakeInput();
-		try (Scanner input = new Scanner(System.in))
+		try (var input = new Scanner(System.in))
 		{
 			while (input.hasNextLine())
 				list.add(input.nextLine().trim());

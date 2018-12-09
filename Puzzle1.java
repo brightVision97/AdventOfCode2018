@@ -964,12 +964,12 @@ public class Puzzle1
 	public static void main(String[] args)
 	{
 		var values = new ArrayList<Integer>();
-		int res = 0;
+		var res = 0;
 		
 		fakeInput();
-		try (Scanner input = new Scanner(System.in))
+		try (var input = new Scanner(System.in))
 		{
-			while (input.hasNextLine())
+			while (input.hasNextInt())
 				values.add(input.nextInt());
 		} catch (NumberFormatException e)
 		{

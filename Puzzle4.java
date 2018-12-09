@@ -1111,13 +1111,13 @@ public class Puzzle4
 	{
 		final var sleepTimes = new HashMap<Integer, Map<Integer, Integer>>();
 		
-		int currId = 0;
-		int currFallenAsleepMin = 0;
-		int currAwakeningMin = 0;
-		int currTotalMinsCount = 0;
-		for (String record : inputData)
+		var currId = 0;
+		var currFallenAsleepMin = 0;
+		var currAwakeningMin = 0;
+		var currTotalMinsCount = 0;
+		for (var record : inputData)
 		{
-			final int currMinIndex = Integer.parseInt(record.substring(
+			final var currMinIndex = Integer.parseInt(record.substring(
 					record.indexOf(':') + 1, record.indexOf(']')));
 			
 			if (record.contains("begins"))
@@ -1132,7 +1132,7 @@ public class Puzzle4
 						? new HashMap<Integer, Integer>()
 						: sleepTimes.get(currId);
 				
-				for (int i = currFallenAsleepMin; i <= currAwakeningMin; i++)
+				for (var i = currFallenAsleepMin; i <= currAwakeningMin; i++)
 				{
 					if (minutes.size() > 0 && minutes.get(i) != null)
 						minutes.put(i, minutes.get(i) + 1);
@@ -1151,9 +1151,9 @@ public class Puzzle4
 	{
 		totalSleepTimes.forEach((k, v) ->
 		{
-			StringBuilder innerMapPreBuffer = new StringBuilder();
+			var innerMapPreBuffer = new StringBuilder();
 			v.forEach((k1, v1) -> innerMapPreBuffer.append(k1 + ":" + v1 + ", "));
-			int buffLength = innerMapPreBuffer.length();
+			var buffLength = innerMapPreBuffer.length();
 			innerMapPreBuffer.delete(buffLength - 2, buffLength - 1);
 			
 			System.out.print(k + " -> " + innerMapPreBuffer.toString() + "\n");
